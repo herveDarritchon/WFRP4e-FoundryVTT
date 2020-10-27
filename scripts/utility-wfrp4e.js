@@ -67,6 +67,12 @@ class WFRP_Utility
    */
   static _prepareQualitiesFlaws(item, includeQualities = true)
   {
+    if (item.data.qualities.value == undefined || item.data.qualities.value == null)
+      item.data.qualities.value == ""
+
+    if (item.data.flaws.value == undefined || item.data.flaws.value == null)
+      item.data.flaws.value == ""
+      
     let qualities = item.data.qualities.value.split(",").map(function (item)
     {
       if (item)
